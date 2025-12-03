@@ -717,5 +717,39 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        function changeLang(lang) {
+            // Remove active class from all elements
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Add active class to selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        // Auto-detect language on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            const userLang = navigator.language.split('-')[0];
+            const supportedLangs = ['en', 'ru', 'es', 'pt', 'de', 'fr'];
+            
+            let defaultLang = 'en';
+            if (savedLang && supportedLangs.includes(savedLang)) {
+                defaultLang = savedLang;
+            } else if (supportedLangs.includes(userLang)) {
+                defaultLang = userLang;
+            }
+            
+            document.getElementById('langSelect').value = defaultLang;
+            changeLang(defaultLang);
+        });
+    </script>
 </body>
 </html>
