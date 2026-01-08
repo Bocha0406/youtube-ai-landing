@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI YouTube Agent - Automate Your Channel</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FF0000'/%3E%3Cpath d='M35 30 L35 70 L70 50 Z' fill='white'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FF0000'/%3E%3Cpath d='M35 30 L35 70 L70 50 Z' fill='white'/%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #FF0000 0%, #282828 100%);
@@ -31,19 +33,19 @@
             padding: 100px 0;
             text-align: center;
         }
-        
+
         .hero h1 {
             font-size: 3.5em;
             margin-bottom: 20px;
             font-weight: 800;
         }
-        
+
         .hero p {
             font-size: 1.5em;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: #FF0000;
@@ -56,66 +58,66 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
         }
-        
+
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
         }
-        
+
         /* Features */
         .features {
             padding: 80px 0;
             background: #f9f9f9;
         }
-        
+
         .features h2 {
             text-align: center;
             font-size: 2.5em;
             margin-bottom: 60px;
             color: #333;
         }
-        
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
         }
-        
+
         .feature-card {
             background: white;
             padding: 40px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .feature-icon {
             font-size: 3em;
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
             font-size: 1.5em;
             margin-bottom: 15px;
             color: #667eea;
         }
-        
+
         /* Pricing */
         .pricing {
             padding: 80px 0;
         }
-        
+
         .pricing h2 {
             text-align: center;
             font-size: 2.5em;
             margin-bottom: 60px;
         }
-        
+
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -123,7 +125,7 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .pricing-card {
             background: white;
             border: 2px solid #e0e0e0;
@@ -132,20 +134,20 @@
             text-align: center;
             transition: all 0.3s;
         }
-        
+
         .pricing-card:hover {
             border-color: #667eea;
             transform: scale(1.05);
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
         }
-        
+
         .pricing-card.featured {
             border-color: #667eea;
             border-width: 3px;
             transform: scale(1.05);
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
         }
-        
+
         .pricing-badge {
             background: #667eea;
             color: white;
@@ -155,43 +157,43 @@
             margin-bottom: 15px;
             display: inline-block;
         }
-        
+
         .pricing-card h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
         }
-        
+
         .price {
             font-size: 3em;
             font-weight: 800;
             color: #667eea;
             margin: 20px 0;
         }
-        
+
         .price-period {
             font-size: 0.4em;
             color: #666;
             font-weight: 400;
         }
-        
+
         .features-list {
             list-style: none;
             margin: 30px 0;
             text-align: left;
         }
-        
+
         .features-list li {
             padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
         }
-        
+
         .features-list li:before {
             content: "✓ ";
             color: #4CAF50;
             font-weight: bold;
             margin-right: 10px;
         }
-        
+
         .buy-button {
             display: block;
             background: #667eea;
@@ -203,12 +205,12 @@
             transition: all 0.3s;
             margin-top: 20px;
         }
-        
+
         .buy-button:hover {
             background: #764ba2;
             transform: translateY(-2px);
         }
-        
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #FF0000 0%, #282828 100%);
@@ -216,18 +218,18 @@
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .cta-section h2 {
             font-size: 2.5em;
             margin-bottom: 30px;
         }
-        
+
         .cta-section p {
             font-size: 1.3em;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-        
+
         /* Footer */
         footer {
             background: #2d3748;
@@ -235,13 +237,13 @@
             text-align: center;
             padding: 30px 0;
         }
-        
+
         .email-link {
             color: #FF0000;
             text-decoration: none;
             font-weight: 600;
         }
-        
+
         /* Language Switcher */
         .lang-switcher {
             position: fixed;
@@ -250,10 +252,10 @@
             background: white;
             padding: 10px 15px;
             border-radius: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
-        
+
         .lang-switcher select {
             border: none;
             background: transparent;
@@ -262,24 +264,24 @@
             outline: none;
             font-weight: 600;
         }
-        
+
         [data-lang] {
             display: none;
         }
-        
+
         [data-lang].active {
             display: inline;
         }
-        
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
             }
-            
+
             .hero p {
                 font-size: 1.1em;
             }
-            
+
             .lang-switcher {
                 top: 10px;
                 right: 10px;
@@ -287,6 +289,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Language Switcher -->
     <div class="lang-switcher">
@@ -320,7 +323,8 @@
                 <span data-lang="fr">Démarrer sur Telegram</span>
             </a>
             <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.85;">
-                <a href="https://ytagent.online/privacy-policy.html" style="color: white; text-decoration: underline; margin: 0 15px;">
+                <a href="https://ytagent.online/privacy-policy.html"
+                    style="color: white; text-decoration: underline; margin: 0 15px;">
                     <span data-lang="en" class="active">Privacy Policy</span>
                     <span data-lang="ru">Политика конфиденциальности</span>
                     <span data-lang="es">Política de Privacidad</span>
@@ -329,7 +333,8 @@
                     <span data-lang="fr">Politique de Confidentialité</span>
                 </a>
                 <span style="margin: 0 5px;">•</span>
-                <a href="https://ytagent.online/terms-of-service.html" style="color: white; text-decoration: underline; margin: 0 15px;">
+                <a href="https://ytagent.online/terms-of-service.html"
+                    style="color: white; text-decoration: underline; margin: 0 15px;">
                     <span data-lang="en" class="active">Terms of Service</span>
                     <span data-lang="ru">Условия использования</span>
                     <span data-lang="es">Términos de Servicio</span>
@@ -342,7 +347,8 @@
     </section>
 
     <!-- About Section -->
-    <section class="about-section" style="background: linear-gradient(135deg, #FF0000 0%, #1a1a1a 100%); padding: 80px 0; margin: 60px 0; color: white;">
+    <section class="about-section"
+        style="background: linear-gradient(135deg, #FF0000 0%, #1a1a1a 100%); padding: 80px 0; margin: 60px 0; color: white;">
         <div class="container" style="max-width: 900px; text-align: center;">
             <h2 style="font-size: 2.5rem; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">
                 <span data-lang="en" class="active">About the Project</span>
@@ -352,72 +358,97 @@
                 <span data-lang="de">Über das Projekt</span>
                 <span data-lang="fr">À propos du Projet</span>
             </h2>
-            
-            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); line-height: 1.8; font-size: 1.1rem;">
+
+            <div
+                style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); line-height: 1.8; font-size: 1.1rem;">
                 <!-- Russian -->
                 <p data-lang="ru" style="margin-bottom: 20px;">
-                    Всем привет! Я решил создать YouTube-агента для помощи мне в работе с каналом! Цель была сделать автоматического помощника. После некоторой работы с ним я понял, что это хороший помощник для многих YouTube-блогеров!
+                    Всем привет! Я решил создать YouTube-агента для помощи мне в работе с каналом! Цель была сделать
+                    автоматического помощника. После некоторой работы с ним я понял, что это хороший помощник для многих
+                    YouTube-блогеров!
                 </p>
                 <p data-lang="ru" style="margin-bottom: 20px;">
-                    Я очень искренне прошу вас писать мне комментарии или предложения для улучшения работы агента. Благодаря вам мы сможем сделать его самым лучшим помощником!
+                    Я очень искренне прошу вас писать мне комментарии или предложения для улучшения работы агента.
+                    Благодаря вам мы сможем сделать его самым лучшим помощником!
                 </p>
                 <p data-lang="ru" style="font-weight: 600;">
-                    Агент только на старте, да он немного сыроват, но вместе мы сделаем лучшего агента для работы с вашим каналом! 🚀
+                    Агент только на старте, да он немного сыроват, но вместе мы сделаем лучшего агента для работы с
+                    вашим каналом! 🚀
                 </p>
 
                 <!-- English -->
                 <p data-lang="en" class="active" style="margin-bottom: 20px;">
-                    Hello everyone! I decided to create a YouTube Agent to help me manage my channel! The goal was to build an automatic assistant. After working with it, I realized it's a great helper for many YouTube creators!
+                    Hello everyone! I decided to create a YouTube Agent to help me manage my channel! The goal was to
+                    build an automatic assistant. After working with it, I realized it's a great helper for many YouTube
+                    creators!
                 </p>
                 <p data-lang="en" class="active" style="margin-bottom: 20px;">
-                    I sincerely ask you to send me your comments or suggestions to improve the agent. Thanks to you, we can make it the best assistant!
+                    I sincerely ask you to send me your comments or suggestions to improve the agent. Thanks to you, we
+                    can make it the best assistant!
                 </p>
                 <p data-lang="en" class="active" style="font-weight: 600;">
-                    The agent is just starting out, yes it's a bit raw, but together we'll make the best agent for your channel! 🚀
+                    The agent is just starting out, yes it's a bit raw, but together we'll make the best agent for your
+                    channel! 🚀
                 </p>
 
                 <!-- Spanish -->
                 <p data-lang="es" style="margin-bottom: 20px;">
-                    ¡Hola a todos! Decidí crear un Agente de YouTube para ayudarme con mi canal. El objetivo era hacer un asistente automático. Después de trabajar con él, me di cuenta de que es un gran ayudante para muchos creadores de YouTube!
+                    ¡Hola a todos! Decidí crear un Agente de YouTube para ayudarme con mi canal. El objetivo era hacer
+                    un asistente automático. Después de trabajar con él, me di cuenta de que es un gran ayudante para
+                    muchos creadores de YouTube!
                 </p>
                 <p data-lang="es" style="margin-bottom: 20px;">
-                    Les pido sinceramente que me envíen sus comentarios o sugerencias para mejorar el agente. Gracias a ustedes, podemos hacerlo el mejor asistente!
+                    Les pido sinceramente que me envíen sus comentarios o sugerencias para mejorar el agente. Gracias a
+                    ustedes, podemos hacerlo el mejor asistente!
                 </p>
                 <p data-lang="es" style="font-weight: 600;">
-                    El agente está apenas comenzando, sí está un poco crudo, pero juntos haremos el mejor agente para tu canal! 🚀
+                    El agente está apenas comenzando, sí está un poco crudo, pero juntos haremos el mejor agente para tu
+                    canal! 🚀
                 </p>
 
                 <!-- Portuguese -->
                 <p data-lang="pt" style="margin-bottom: 20px;">
-                    Olá a todos! Decidi criar um Agente YouTube para me ajudar com meu canal! O objetivo era fazer um assistente automático. Depois de trabalhar com ele, percebi que é um ótimo ajudante para muitos criadores de YouTube!
+                    Olá a todos! Decidi criar um Agente YouTube para me ajudar com meu canal! O objetivo era fazer um
+                    assistente automático. Depois de trabalhar com ele, percebi que é um ótimo ajudante para muitos
+                    criadores de YouTube!
                 </p>
                 <p data-lang="pt" style="margin-bottom: 20px;">
-                    Peço sinceramente que me enviem seus comentários ou sugestões para melhorar o agente. Graças a vocês, podemos torná-lo o melhor assistente!
+                    Peço sinceramente que me enviem seus comentários ou sugestões para melhorar o agente. Graças a
+                    vocês, podemos torná-lo o melhor assistente!
                 </p>
                 <p data-lang="pt" style="font-weight: 600;">
-                    O agente está apenas começando, sim está um pouco cru, mas juntos faremos o melhor agente para o seu canal! 🚀
+                    O agente está apenas começando, sim está um pouco cru, mas juntos faremos o melhor agente para o seu
+                    canal! 🚀
                 </p>
 
                 <!-- German -->
                 <p data-lang="de" style="margin-bottom: 20px;">
-                    Hallo zusammen! Ich habe beschlossen, einen YouTube-Agenten zu erstellen, um mir bei meinem Kanal zu helfen! Das Ziel war es, einen automatischen Assistenten zu erstellen. Nach der Arbeit damit wurde mir klar, dass es ein großartiger Helfer für viele YouTube-Ersteller ist!
+                    Hallo zusammen! Ich habe beschlossen, einen YouTube-Agenten zu erstellen, um mir bei meinem Kanal zu
+                    helfen! Das Ziel war es, einen automatischen Assistenten zu erstellen. Nach der Arbeit damit wurde
+                    mir klar, dass es ein großartiger Helfer für viele YouTube-Ersteller ist!
                 </p>
                 <p data-lang="de" style="margin-bottom: 20px;">
-                    Ich bitte Sie aufrichtig, mir Ihre Kommentare oder Vorschläge zur Verbesserung des Agenten zu senden. Dank Ihnen können wir ihn zum besten Assistenten machen!
+                    Ich bitte Sie aufrichtig, mir Ihre Kommentare oder Vorschläge zur Verbesserung des Agenten zu
+                    senden. Dank Ihnen können wir ihn zum besten Assistenten machen!
                 </p>
                 <p data-lang="de" style="font-weight: 600;">
-                    Der Agent fängt gerade erst an, ja er ist etwas roh, aber gemeinsam werden wir den besten Agenten für Ihren Kanal machen! 🚀
+                    Der Agent fängt gerade erst an, ja er ist etwas roh, aber gemeinsam werden wir den besten Agenten
+                    für Ihren Kanal machen! 🚀
                 </p>
 
                 <!-- French -->
                 <p data-lang="fr" style="margin-bottom: 20px;">
-                    Bonjour à tous ! J'ai décidé de créer un Agent YouTube pour m'aider avec ma chaîne ! L'objectif était de créer un assistant automatique. Après avoir travaillé avec lui, j'ai réalisé que c'est un excellent assistant pour de nombreux créateurs YouTube !
+                    Bonjour à tous ! J'ai décidé de créer un Agent YouTube pour m'aider avec ma chaîne ! L'objectif
+                    était de créer un assistant automatique. Après avoir travaillé avec lui, j'ai réalisé que c'est un
+                    excellent assistant pour de nombreux créateurs YouTube !
                 </p>
                 <p data-lang="fr" style="margin-bottom: 20px;">
-                    Je vous demande sincèrement de m'envoyer vos commentaires ou suggestions pour améliorer l'agent. Grâce à vous, nous pouvons en faire le meilleur assistant !
+                    Je vous demande sincèrement de m'envoyer vos commentaires ou suggestions pour améliorer l'agent.
+                    Grâce à vous, nous pouvons en faire le meilleur assistant !
                 </p>
                 <p data-lang="fr" style="font-weight: 600;">
-                    L'agent ne fait que commencer, oui il est un peu brut, mais ensemble nous ferons le meilleur agent pour votre chaîne ! 🚀
+                    L'agent ne fait que commencer, oui il est un peu brut, mais ensemble nous ferons le meilleur agent
+                    pour votre chaîne ! 🚀
                 </p>
 
                 <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.3);">
@@ -429,7 +460,9 @@
                         <span data-lang="de">📧 Senden Sie Ihr Feedback:</span>
                         <span data-lang="fr">📧 Envoyez votre avis:</span>
                     </p>
-                    <a href="https://t.me/maxbchkv" target="_blank" style="display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <a href="https://t.me/maxbchkv" target="_blank"
+                        style="display: inline-block; background: white; color: #667eea; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                         @maxbchkv
                     </a>
                 </div>
@@ -460,15 +493,17 @@
                         <span data-lang="fr">Analytique IA</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">Charts + AI trend analysis with specific recommendations for channel growth</span>
-                        <span data-lang="ru">Графики + AI-анализ трендов с конкретными рекомендациями для роста канала</span>
+                        <span data-lang="en" class="active">Charts + AI trend analysis with specific recommendations for
+                            channel growth</span>
+                        <span data-lang="ru">Графики + AI-анализ трендов с конкретными рекомендациями для роста
+                            канала</span>
                         <span data-lang="es">Gráficos + análisis de tendencias AI con recomendaciones específicas</span>
                         <span data-lang="pt">Gráficos + análise de tendências AI com recomendações específicas</span>
                         <span data-lang="de">Diagramme + KI-Trendanalyse mit spezifischen Empfehlungen</span>
                         <span data-lang="fr">Graphiques + analyse de tendances IA avec recommandations</span>
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>
@@ -480,15 +515,17 @@
                         <span data-lang="fr">72 langues</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">Auto-translate titles, descriptions, and subtitles. Reach global audience!</span>
-                        <span data-lang="ru">Автоматический перевод названий, описаний и субтитров. Расширьте аудиторию!</span>
+                        <span data-lang="en" class="active">Auto-translate titles, descriptions, and subtitles. Reach
+                            global audience!</span>
+                        <span data-lang="ru">Автоматический перевод названий, описаний и субтитров. Расширьте
+                            аудиторию!</span>
                         <span data-lang="es">Traducción automática de títulos, descripciones y subtítulos</span>
                         <span data-lang="pt">Tradução automática de títulos, descrições e legendas</span>
                         <span data-lang="de">Automatische Übersetzung von Titeln, Beschreibungen und Untertiteln</span>
                         <span data-lang="fr">Traduction automatique des titres, descriptions et sous-titres</span>
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">🔧</div>
                     <h3>
@@ -500,7 +537,8 @@
                         <span data-lang="fr">Optimisation SEO</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">AI improves titles, descriptions and tags for maximum reach</span>
+                        <span data-lang="en" class="active">AI improves titles, descriptions and tags for maximum
+                            reach</span>
                         <span data-lang="ru">AI улучшает заголовки, описания и теги для максимального охвата</span>
                         <span data-lang="es">IA mejora títulos, descripciones y etiquetas</span>
                         <span data-lang="pt">IA melhora títulos, descrições e tags</span>
@@ -508,7 +546,7 @@
                         <span data-lang="fr">L'IA améliore les titres, descriptions et tags</span>
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
                     <h3>
@@ -520,7 +558,8 @@
                         <span data-lang="fr">Réponses intelligentes</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">AI replies to comments, maintaining audience engagement</span>
+                        <span data-lang="en" class="active">AI replies to comments, maintaining audience
+                            engagement</span>
                         <span data-lang="ru">AI отвечает на комментарии, поддерживая вовлечённость аудитории</span>
                         <span data-lang="es">IA responde a comentarios manteniendo el engagement</span>
                         <span data-lang="pt">IA responde a comentários mantendo o engajamento</span>
@@ -528,7 +567,7 @@
                         <span data-lang="fr">L'IA répond aux commentaires maintenant l'engagement</span>
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>
@@ -540,7 +579,8 @@
                         <span data-lang="fr">Automatisation 24/7</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">Bot works 24/7 analyzing channel and processing new videos</span>
+                        <span data-lang="en" class="active">Bot works 24/7 analyzing channel and processing new
+                            videos</span>
                         <span data-lang="ru">Бот работает 24/7, анализируя канал и обрабатывая новые видео</span>
                         <span data-lang="es">Bot funciona 24/7 analizando el canal y procesando videos</span>
                         <span data-lang="pt">Bot funciona 24/7 analisando o canal e processando vídeos</span>
@@ -548,7 +588,7 @@
                         <span data-lang="fr">Bot fonctionne 24/7 en analysant la chaîne et les vidéos</span>
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>
@@ -560,11 +600,13 @@
                         <span data-lang="fr">Contrôle Telegram</span>
                     </h3>
                     <p>
-                        <span data-lang="en" class="active">Manage everything via convenient Telegram bot with buttons and charts</span>
+                        <span data-lang="en" class="active">Manage everything via convenient Telegram bot with buttons
+                            and charts</span>
                         <span data-lang="ru">Управляйте всем через удобный Telegram бот с кнопками и графиками</span>
                         <span data-lang="es">Gestiona todo mediante bot de Telegram con botones y gráficos</span>
                         <span data-lang="pt">Gerencie tudo através do bot do Telegram com botões e gráficos</span>
-                        <span data-lang="de">Verwalten Sie alles über Telegram-Bot mit Schaltflächen und Diagrammen</span>
+                        <span data-lang="de">Verwalten Sie alles über Telegram-Bot mit Schaltflächen und
+                            Diagrammen</span>
                         <span data-lang="fr">Gérez tout via le bot Telegram avec boutons et graphiques</span>
                     </p>
                 </div>
@@ -586,7 +628,8 @@
                 <span data-lang="es">Expandiendo a más plataformas</span>
             </p>
             <div class="features-grid">
-                <div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
+                <div class="feature-card"
+                    style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
                     <div class="feature-icon" style="background: rgba(255,255,255,0.2);">🎵</div>
                     <h3 style="color: white;">TikTok</h3>
                     <p style="color: rgba(255,255,255,0.9);">
@@ -595,7 +638,8 @@
                         <span data-lang="es">Q1 2026</span>
                     </p>
                 </div>
-                <div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
+                <div class="feature-card"
+                    style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.2);">
                     <div class="feature-icon" style="background: rgba(255,255,255,0.2);">📸</div>
                     <h3 style="color: white;">Instagram</h3>
                     <p style="color: rgba(255,255,255,0.9);">
@@ -850,21 +894,59 @@
                 <span data-lang="de">Unsere Pläne für die Expansion auf neue Plattformen</span>
                 <span data-lang="fr">Nos plans pour s'étendre à de nouvelles plateformes</span>
             </p>
-            
+
             <div style="position: relative; max-width: 900px; margin: 0 auto;">
                 <!-- Timeline Line -->
-                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #FF0000 0%, #666 100%); transform: translateX(-50%);"></div>
-                
+                <div
+                    style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #FF0000 0%, #666 100%); transform: translateX(-50%);">
+                </div>
+
                 <!-- YouTube - Active -->
                 <div style="display: flex; align-items: center; margin-bottom: 80px; position: relative;">
                     <div style="flex: 1; text-align: right; padding-right: 40px;">
                         <h3 style="font-size: 1.8em; color: #FF0000; margin-bottom: 10px;">
-                            <span data-lang="en" class="active">📺 YouTube</span>
-                            <span data-lang="ru">📺 YouTube</span>
-                            <span data-lang="es">📺 YouTube</span>
-                            <span data-lang="pt">📺 YouTube</span>
-                            <span data-lang="de">📺 YouTube</span>
-                            <span data-lang="fr">📺 YouTube</span>
+                            <span data-lang="en" class="active"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
+                            <span data-lang="ru"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
+                            <span data-lang="es"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
+                            <span data-lang="pt"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
+                            <span data-lang="de"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
+                            <span data-lang="fr"><svg viewBox="0 0 24 24" width="24" height="24"
+                                    style="vertical-align: middle; margin-right: 8px; display: inline-block;"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                                        fill="#FF0000" />
+                                </svg> YouTube</span>
                         </h3>
                         <p style="color: #666; font-size: 1.1em;">
                             <span data-lang="en" class="active">✅ Available Now</span>
@@ -875,14 +957,18 @@
                             <span data-lang="fr">✅ Disponible maintenant</span>
                         </p>
                     </div>
-                    <div style="width: 40px; height: 40px; background: #FF0000; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #FF0000; position: relative; z-index: 1;"></div>
+                    <div
+                        style="width: 40px; height: 40px; background: #FF0000; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #FF0000; position: relative; z-index: 1;">
+                    </div>
                     <div style="flex: 1; padding-left: 40px;"></div>
                 </div>
-                
+
                 <!-- TikTok - Coming Soon -->
                 <div style="display: flex; align-items: center; margin-bottom: 80px; position: relative;">
                     <div style="flex: 1; padding-right: 40px;"></div>
-                    <div style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;"></div>
+                    <div
+                        style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;">
+                    </div>
                     <div style="flex: 1; text-align: left; padding-left: 40px;">
                         <h3 style="font-size: 1.8em; color: #333; margin-bottom: 10px;">
                             <span data-lang="en" class="active">📱 TikTok</span>
@@ -902,7 +988,7 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Instagram - Coming Soon -->
                 <div style="display: flex; align-items: center; margin-bottom: 80px; position: relative;">
                     <div style="flex: 1; text-align: right; padding-right: 40px;">
@@ -923,14 +1009,18 @@
                             <span data-lang="fr">🔜 Bientôt</span>
                         </p>
                     </div>
-                    <div style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;"></div>
+                    <div
+                        style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;">
+                    </div>
                     <div style="flex: 1; padding-left: 40px;"></div>
                 </div>
-                
+
                 <!-- Exploring New Platforms -->
                 <div style="display: flex; align-items: center; position: relative;">
                     <div style="flex: 1; padding-right: 40px;"></div>
-                    <div style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;"></div>
+                    <div
+                        style="width: 40px; height: 40px; background: #666; border-radius: 50%; border: 5px solid white; box-shadow: 0 0 0 4px #666; position: relative; z-index: 1;">
+                    </div>
                     <div style="flex: 1; text-align: left; padding-left: 40px;">
                         <h3 style="font-size: 1.8em; color: #333; margin-bottom: 10px;">
                             <span data-lang="en" class="active">🔍 Exploring New Platforms</span>
@@ -967,7 +1057,8 @@
             </h2>
             <p>
                 <span data-lang="en" class="active">Join dozens of content creators already using AI for growth</span>
-                <span data-lang="ru">Присоединяйтесь к десяткам создателей контента, которые уже используют AI для роста</span>
+                <span data-lang="ru">Присоединяйтесь к десяткам создателей контента, которые уже используют AI для
+                    роста</span>
                 <span data-lang="es">Únete a docenas de creadores que ya usan IA para crecer</span>
                 <span data-lang="pt">Junte-se a dezenas de criadores que já usam IA para crescer</span>
                 <span data-lang="de">Schließen Sie sich Dutzenden von Erstellern an, die bereits KI nutzen</span>
@@ -1020,7 +1111,8 @@
                 <span data-lang="pt">Suporte:</span>
                 <span data-lang="de">Support:</span>
                 <span data-lang="fr">Support:</span>
-                <a href="https://t.me/MyAgentyt_support_bot" class="email-link" target="_blank">@MyAgentyt_support_bot</a>
+                <a href="https://t.me/MyAgentyt_support_bot" class="email-link"
+                    target="_blank">@MyAgentyt_support_bot</a>
             </p>
         </div>
     </footer>
@@ -1031,32 +1123,33 @@
             document.querySelectorAll('[data-lang]').forEach(el => {
                 el.classList.remove('active');
             });
-            
+
             // Add active class to selected language
             document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
                 el.classList.add('active');
             });
-            
+
             // Save preference
             localStorage.setItem('preferredLang', lang);
         }
-        
+
         // Auto-detect language on load
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             const savedLang = localStorage.getItem('preferredLang');
             const userLang = navigator.language.split('-')[0];
             const supportedLangs = ['en', 'ru', 'es', 'pt', 'de', 'fr'];
-            
+
             let defaultLang = 'en';
             if (savedLang && supportedLangs.includes(savedLang)) {
                 defaultLang = savedLang;
             } else if (supportedLangs.includes(userLang)) {
                 defaultLang = userLang;
             }
-            
+
             document.getElementById('langSelect').value = defaultLang;
             changeLang(defaultLang);
         });
     </script>
 </body>
+
 </html>
