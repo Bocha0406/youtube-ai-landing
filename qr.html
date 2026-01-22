@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot QR Code - AI YouTube Agent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .qr-code img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        
+        .link {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: monospace;
+            color: #667eea;
+            word-break: break-all;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .button-telegram {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .button-download {
+            background: #667eea;
+            color: white;
+        }
+        
+        .instructions {
+            text-align: left;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .buttons {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI YouTube Agent</h1>
+        <p>Отсканируй QR код или используй ссылку ниже</p>
+        
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://t.me/MyAgentyt_bot" alt="QR Code">
+        </div>
+        
+        <div class="link">
+            https://t.me/MyAgentyt_bot
+        </div>
+        
+        <div class="buttons">
+            <a href="https://t.me/MyAgentyt_bot" target="_blank" class="button button-telegram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161l-1.84 8.672c-.139.623-.5.775-1.016.483l-2.805-2.067-1.351 1.302c-.15.15-.275.275-.563.275l.2-2.86 5.183-4.686c.225-.2-.05-.312-.35-.112l-6.407 4.037-2.76-.864c-.6-.188-.613-.6.126-.888l10.785-4.156c.5-.188.938.112.776.888z"/>
+                </svg>
+                Открыть в Telegram
+            </a>
+            
+            <button onclick="downloadQR()" class="button button-download">
+                💾 Скачать QR
+            </button>
+            
+            <button onclick="window.print()" class="button button-download">
+                🖨️ Печать
+            </button>
+        </div>
+        
+        <div class="instructions">
+            <h3>📱 Как использовать:</h3>
+            <ol>
+                <li>Открой камеру на телефоне</li>
+                <li>Наведи на QR код</li>
+                <li>Нажми на уведомление</li>
+                <li>Telegram откроется автоматически</li>
+                <li>Нажми /start в боте</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        function downloadQR() {
+            const link = document.createElement('a');
+            link.href = 'https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=https://t.me/MyAgentyt_bot';
+            link.download = 'telegram-bot-qr.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
